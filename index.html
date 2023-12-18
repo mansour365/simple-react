@@ -53,7 +53,9 @@
             
 
             /*Card Section */
-            const card = (<div className = "card">  
+            /*component inside componenet*/
+            function NewCard(){
+                return (<div className = "card">  
                             <div className = "image-section">
                             </div>
 
@@ -63,13 +65,15 @@
                             </div>
 
                             <div id = "dateSection">
-                                <TodayDate />
+                                <TodayDate />  
                             </div>
                          </div>); 
+            }
+            
 
 
             const root = ReactDOM.createRoot(document.getElementById('root'));
-            root.render(card); //Render will render it to the screen
+            root.render(<NewCard />); //Render will render it to the screen
 
 
             /*Date Section*/
