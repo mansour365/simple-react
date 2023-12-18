@@ -1,28 +1,100 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <title>Journal</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!--Import react-->
         <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+        <!--Import roboto font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="style.css">
+
     </head>
 
     <body>
-        <div id="mydiv">
+        <div id="title">
 
         </div>
 
-        
 
+        <div id = "root">
+
+        </div>
+
+
+        <div id = "test">
+
+        </div>
+        
+        
 
 
 
         <script type="text/babel">
 
-            function Hello() {
-                return <h1>Hello World!</h1>;
+            /*Title section*/
+            function TopTitle() {
+                return <h1>Journal</h1>;
             }
 
-            ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+            const title = ReactDOM.createRoot(document.getElementById('title'));
+            title.render(<TopTitle />);
+            
+
+            /*Card Section */
+            const card = (<div className = "card">  
+                            <div className = "image-section">
+                            </div>
+
+                            <div className = "text-section">
+                                <div className = "text-title">title</div>
+                                <div className = "text-body">text...</div>
+                            </div>
+
+                            <div className = "date-section">Today's date</div>
+                         </div>); 
+
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(card); //Render will render it to the screen
+
+
+            /*Date Section*/
+            const d = new Date();
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            let day = days[d.getDay()];
+            let month = months[d.getMonth()];
+            let dateNum = d.getDate();
+            let year = d.getFullYear();
+
+
+            const theDate = <p>{day},  {month} {dateNum} {year}</p>;
+
+            const dateSection = ReactDOM.createRoot(document.getElementById('date-section'));
+            dateSection.render(theDate);
+
+
+            
+
+            
+
+
+            
+
+            
 
         </script>
 

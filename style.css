@@ -1,0 +1,42 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+  background-color: rgb(247, 245, 246);
+}
+.card{
+  display: flex; /*flexbox mode*/
+  flex-direction: column; /*flex in direction vertically*/
+  justify-content: space-between; /*equal space between each element in flex box*/
+  margin: auto; /*center the card*/
+  background-color: rgb(255, 254, 255);
+  width: 80%;
+  height: 250px;
+  border-radius: 4%/ 2%;
+}
+.image-section{
+  height: 45%;
+  border: solid red 1px;
+}
+.text-section{
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid rgb(0, 17, 255) 1px;
+}
+.text-title{
+  height:20%;
+  border: solid rgb(255, 0, 191) 1px;
+}
+.text-body{
+  height:80%;
+  border: solid rgb(0, 255, 98) 1px;
+
+}
+.date-section{
+  height: 10%;
+  border: solid rgb(251, 255, 0) 1px;
+}
+
+  
