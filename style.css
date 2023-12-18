@@ -34,7 +34,7 @@ body {
   border: solid rgb(0, 255, 98) 1px;
 
 }
-.date-section{
+#dateSection{
   height: 10%;
   border: solid rgb(251, 255, 0) 1px;
 }

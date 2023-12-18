@@ -43,6 +43,7 @@
         <script type="text/babel">
 
             /*Title section*/
+            /*Function component*/
             function TopTitle() {
                 return <h1>Journal</h1>;
             }
@@ -61,7 +62,9 @@
                                 <div className = "text-body">text...</div>
                             </div>
 
-                            <div className = "date-section">Today's date</div>
+                            <div id = "dateSection">
+                                <TodayDate />
+                            </div>
                          </div>); 
 
 
@@ -70,21 +73,22 @@
 
 
             /*Date Section*/
-            const d = new Date();
+            function TodayDate(){
+                const d = new Date();
 
-            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-            let day = days[d.getDay()];
-            let month = months[d.getMonth()];
-            let dateNum = d.getDate();
-            let year = d.getFullYear();
+                let day = days[d.getDay()];
+                let month = months[d.getMonth()];
+                let dateNum = d.getDate();
+                let year = d.getFullYear();
+                return <>{day},  {month} {dateNum} {year}</>;
+            }
+            
 
 
-            const theDate = <p>{day},  {month} {dateNum} {year}</p>;
-
-            const dateSection = ReactDOM.createRoot(document.getElementById('date-section'));
-            dateSection.render(theDate);
+    
 
 
             
