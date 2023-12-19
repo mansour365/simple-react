@@ -22,19 +22,15 @@
     </head>
 
     <body>
-        <div id="title">
-
-        </div>
+        <div id="title"></div>
 
 
-        <div id = "root">
-
-        </div>
+        <div id = "root"></div>
 
 
-        <div id = "test">
+        <div id = "test"></div>
 
-        </div>
+        <div id = "addBtn"></div>
         
         
 
@@ -50,6 +46,24 @@
 
             const title = ReactDOM.createRoot(document.getElementById('title'));
             title.render(<TopTitle />);
+
+
+                /*Date Section*/
+            function TodayDate(){
+                const d = new Date();
+
+                const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+                let day = days[d.getDay()];
+                let month = months[d.getMonth()];
+                let dateNum = d.getDate();
+                let year = d.getFullYear();
+                return <>{day},  {month} {dateNum} {year}</>;
+            }
+
+            const addBtn = ReactDOM.createRoot(document.getElementById('addBtn'));
+            addBtn.render(<AddBtn />)
             
 
             /*Card Section */
@@ -60,14 +74,17 @@
                             </div>
 
                             <div className = "text-section">
-                                <div className = "text-title">title</div>
-                                <div className = "text-body">text...</div>
+                                
                             </div>
 
                             <div id = "dateSection">
-                                <TodayDate />  
+                                <div id = "date">
+                                    <TodayDate />  
+                                </div>
                             </div>
-                         </div>); 
+
+
+                        </div>); 
             }
             
 
@@ -75,18 +92,10 @@
             root.render(<NewCard />); //Render will render it to the screen
 
 
-            /*Date Section*/
-            function TodayDate(){
-                const d = new Date();
 
-                const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-                let day = days[d.getDay()];
-                let month = months[d.getMonth()];
-                let dateNum = d.getDate();
-                let year = d.getFullYear();
-                return <>{day},  {month} {dateNum} {year}</>;
+            function AddBtn(){
+                return <div className="addBtn" type="button">+</div>
             }
             
 
