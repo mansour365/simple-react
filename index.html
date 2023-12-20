@@ -28,9 +28,7 @@
     <body>
         <div id="title"></div>
 
-
         <div id = "root"></div>
-
 
         <div id = "test"></div>
 
@@ -57,7 +55,6 @@
             /*Date Section*/
             function TodayDate(){
                 const d = new Date();
-
                 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
                 const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
@@ -73,7 +70,7 @@
 
 
             function AddBtn(){
-                return (<div className="addBtn" type="button">
+                return (<div className="addBtn" type="button" onClick={CreateNewCard}>
                                 <span className="material-symbols-outlined">add</span>
                        </div>);
             }
@@ -105,15 +102,34 @@
 
                         </div>); 
             }
+
+
+            function CreateCard(){
+                return (<div className = "edit-card">  
+
+                            <div className = "top-date">
+                                <TodayDate />
+                            </div>
+
+                            <div className = "edit-title">
+                            </div>
+                            
+                            <div className = "edit-text">
+                            </div>
+
+                            <div className = "edit-images">
+                            </div>
+
+
+                        </div>); 
+            }
             
 
-            const root = ReactDOM.createRoot(document.getElementById('root'));
-            root.render(<NewCard />); //Render will render it to the screen
-
-
-
-
-
+            
+            function CreateNewCard(){
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(<CreateCard />); //Render will render it to the screen
+            }
             
 
 
@@ -134,3 +150,17 @@
 
     </body>
 </html>
+
+<!--
+
+Edit the text
+https://www.macrumors.com/how-to/use-apple-journal-app/
+https://www.apple.com/newsroom/images/2023/12/apple-launches-journal-app-for-reflecting-on-everyday-moments/article/Apple-Journal-app-edit-entry_inline.jpg.large.jpg
+https://www.cultofmac.com/wp-content/uploads/2023/12/Journal-Entry-780x736.jpg
+
+
+
+
+
+
+-->
