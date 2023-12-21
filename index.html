@@ -42,20 +42,11 @@
 
 
         <script type="text/babel">
-
-            /*Title section*/
-            /*Function component*/
+            /*Function components*/
             function TopTitle() {
                 return <p>Journal</p>;
             }
 
-            const title = ReactDOM.createRoot(document.getElementById('title'));
-            title.render(<TopTitle />);
-
-
-
-
-            /*Date Section*/
             function TodayDate(){
                 const d = new Date();
                 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -68,105 +59,74 @@
                 return <>{day},  {month} {dateNum} {year}</>;
             }
 
-
-
-
-
             function AddBtn(){
+                const CreateNewCard = () => {
+                    const root = ReactDOM.createRoot(document.getElementById('root'));
+                    root.render(<CreateCard />); //Render will render it to the screen
+                }
                 return (<div className="addBtn" type="button" onClick={CreateNewCard}>
                                 <span className="material-symbols-outlined">add</span>
                        </div>);
             }
 
-            const addBtn = ReactDOM.createRoot(document.getElementById('addBtn'));
-            addBtn.render(<AddBtn />)
-
-
-
-
             function DoneBtn(){
-                return (<div className="doneBtn" type="button" >
+                return (<div className="doneBtn" type="button" onClick={ShowCards}>
                                 Done
                        </div>);
             }
-
 
             function BookmarkBtn(){
                 return (<div className="bookmarkBtn" type="button" >
                                 <span className="material-symbols-outlined">bookmark</span>
                        </div>);
             }
-            
 
-
-
-
-            /*Card Section */
             /*component inside componenet*/
             function NewCard(){
                 return (<div className = "card">  
-                            <div className = "image-section">
-                            </div>
+                            <div className = "image-section"></div>
 
-                            <div className = "text-section">
-                                
-                            </div>
+                            <div className = "text-section"></div>
 
                             <div id = "dateSection">
                                 <div id = "date">
                                     <TodayDate />  
                                 </div>
                             </div>
-
-
                         </div>); 
             }
-
 
             function CreateCard(){
                 return (<div className = "edit-card">  
-
                             <div className = "top-date">
                                 <BookmarkBtn /> <TodayDate /> <DoneBtn />
                             </div>
-
                             <div className = "edit-title">
                                 title
                             </div>
-                            
                             <div className = "edit-text">
                                 text
                             </div>
-
                             <div className = "edit-images">
                                 add images
                             </div>
-
-
                         </div>); 
             }
-            
+
+
+
+
+
+
+            /*Title section*/
+            const title = ReactDOM.createRoot(document.getElementById('title'));
+            title.render(<TopTitle />);
+
+            /*addBtn*/
+            const addBtn = ReactDOM.createRoot(document.getElementById('addBtn'));
+            addBtn.render(<AddBtn />);
 
             
-            function CreateNewCard(){
-                const root = ReactDOM.createRoot(document.getElementById('root'));
-                root.render(<CreateCard />); //Render will render it to the screen
-            }
-            
-
-
-    
-
-
-            
-
-            
-
-
-            
-
-            
-
         </script>
 
 
